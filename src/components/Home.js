@@ -1,33 +1,54 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { changeFilter, removeFilter } from '../actions';
+import Distribution from './distribution';
+import FetchingData from './FetchingData';
+import ItemPreview from './ItemPreview';
+import FilterCategory from './FilterCategory';
 
 const Home = () => {
-  const [image, updateImage] = useState('');
+  const dispatch = useDispatch();
+  const gameDataState = useSelector((state) => state.gameDataReducer);
+  const filterBy = useSelector((state) => state.filterReducer);
 
   useEffect(() => {
-    const fetchData = async () => {
-      const id = '436336';
-      const apiDepartment = 'https://collectionapi.metmuseum.org/public/collection/v1/objects?departmentIds=11';
-      const apiObject = `https://collectionapi.metmuseum.org/public/collection/v1/objects/${id}`;
-      try {
-        const departmentItems = await fetch(apiDepartment, { mode: 'cors' });
-        const json = await departmentItems.json();
-        const ids = json.objectIDs;
-        console.log(ids);
-        const item = await fetch(apiObject, { mode: 'cors' });
-        const objectRes = await item.json();
-        updateImage(objectRes.primaryImage);
-        return objectRes;
-      } catch (e) {
-        return e;
-      }
-    };
-    fetchData();
+    FetchingData({ dispatch });
   }, []);
+
+  if (gameDataState.loading) {
+    return <h2>loading</h2>;
+  }
+  if (gameDataState.error) {
+    return <h2>{gameDataState.error}</h2>;
+  }
+
+  const handleFilterChange = (catFilter) => {
+    if (catFilter === 'all') {
+      dispatch(removeFilter());
+    } else {
+      dispatch(changeFilter(catFilter));
+    }
+  };
+
+  const calling = Distribution({ gameDataState });
+  const categories = calling.gameCategories();
+  const allItems = calling.gameItems();
+
+  const itemsToRender = filterBy.filter === 'all' ? allItems : categories[filterBy.filter];
 
   return (
     <div>
-      <h1>Hello from Home</h1>
-      <img alt="Cannnot be shown" className="object-img" src={image} />
+      <FilterCategory selectHandler={handleFilterChange} />
+      <ul>
+        {itemsToRender.map((item) => (
+          <ItemPreview
+            key={item.id}
+            id={item.id}
+            name={item.name}
+            srcImg={item.image}
+          />
+        ))}
+      </ul>
     </div>
   );
 };

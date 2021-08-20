@@ -6,7 +6,7 @@ const Routes = () => (
   <BrowserRouter>
     <Switch>
       <Route exact path="/" component={App} />
-      <Route exact path="/item" component={GameItem} />
+      <Route path="/item/:itemId" component={GameItem} />
     </Switch>
   </BrowserRouter>
 );
