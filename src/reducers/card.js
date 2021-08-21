@@ -1,31 +1,31 @@
 const initialState = {
-  loading: true,
+  loading: false,
   data: {},
   errors: '',
 };
 
-const cardsReducer = (state = initialState, action) => {
+const singleCardReducer = (state = initialState, action) => {
   switch (action.type) {
-    case 'FETCH_DATA_REQUEST':
+    case 'FETCH_CARD_REQUEST':
       return { ...state, loading: true };
-    case 'FETCH_DATA_SUCCESS':
+    case 'FETCH_CARD_SUCCESS':
       return {
         ...state,
         loading: false,
         data: action.payload.data,
       };
-    case 'FETCH_DATA_ERROR':
+    case 'FETCH_CARD_ERROR':
       return {
         ...state,
         loading: false,
         data: {},
         errors: action.payload.msg,
       };
-    case 'RESTART_DATA':
+    case 'FETCH_CARD_RESTART':
       return { ...initialState };
     default:
       return state;
   }
 };
 
-export default cardsReducer;
+export default singleCardReducer;

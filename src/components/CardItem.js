@@ -1,22 +1,36 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
+import { fetchingCard } from './fetching';
 
 const GameItem = ({ match }) => {
-  const cardState = useSelector((selector) => selector.cardsReducer);
+  const dispatch = useDispatch();
+  const cardState = useSelector((state) => state.singleCardReducer);
   const {
     params: { itemId },
   } = match;
+  const url = itemId;
 
-  const cardObj = cardState.data.filter((card) => card.id === itemId);
-  console.log(cardObj);
-  const card = cardObj[0];
-  const replace = 'https://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=83185&type=card';
+  useEffect(() => {
+    fetchingCard({ dispatch, url });
+  }, []);
+
+  console.log(cardState);
+  console.log(itemId);
+
+  if (cardState.loading) {
+    return <h2>loading</h2>;
+  }
+  if (cardState.error) {
+    return <h2>{cardState.error}</h2>;
+  }
+
+  const { card } = cardState.data;
 
   return (
     <div>
-      <img alt={card.name} src={card.id !== '37f0071d-09b9-5fdc-a5de-52061a01cb64' ? card.imageUrl : replace} />
+      <img alt={card.name} src={card.imageUrl} />
       <h2>{card.name}</h2>
       <p>Artist:</p>
       <p>{card.artist}</p>

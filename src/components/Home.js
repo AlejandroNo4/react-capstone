@@ -1,18 +1,17 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { changeFilter, removeFilter, restartData } from '../actions';
+import { changeFilter, removeFilter } from '../actions';
 import ItemPreview from './ItemPreview';
-import FetchingData from './FetchingData';
+import { fetchingData } from './fetching';
 import FilterType from './FilterType';
 
 const Home = () => {
   const dispatch = useDispatch();
-  dispatch(restartData);
   const gameDataState = useSelector((state) => state.cardsReducer);
   const filterBy = useSelector((state) => state.filterReducer);
 
   useEffect(() => {
-    FetchingData({ dispatch });
+    fetchingData({ dispatch });
   }, []);
 
   if (gameDataState.loading) {
