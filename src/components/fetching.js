@@ -30,7 +30,7 @@ const fetchingCard = ({ dispatch, url }) => {
     try {
       const request = await axios.get(url);
       const { data } = request;
-      dispatch(fetchCardSuccess(data));
+      dispatch(fetchCardSuccess(data.card));
       return data;
     } catch (error) {
       dispatch(fetchCardError(error.message));

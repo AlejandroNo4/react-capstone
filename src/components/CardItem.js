@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
+import { cleanCardData } from '../actions/index';
 import { fetchingCard } from './fetching';
 
 const GameItem = ({ match }) => {
@@ -14,19 +15,17 @@ const GameItem = ({ match }) => {
 
   useEffect(() => {
     fetchingCard({ dispatch, url });
+    return () => { dispatch(cleanCardData()); };
   }, []);
 
-  console.log(cardState);
-  console.log(itemId);
-
-  if (cardState.loading) {
+  if (cardState.loading || Object.keys(cardState.data).length === 0) {
     return <h2>loading</h2>;
   }
   if (cardState.error) {
     return <h2>{cardState.error}</h2>;
   }
 
-  const { card } = cardState.data;
+  const card = cardState.data;
 
   return (
     <div>

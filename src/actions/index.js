@@ -16,8 +16,6 @@ const fetchDataError = (errorMsg) => ({
 
 const fetchCardRequest = () => ({ type: 'FETCH_CARD_REQUEST' });
 
-const fetchCardRestart = () => ({ type: 'FETCH_CARD_RESTART' });
-
 const fetchCardSuccess = (data) => ({
   type: 'FETCH_CARD_SUCCESS',
   payload: {
@@ -31,6 +29,8 @@ const fetchCardError = (errorMsg) => ({
     error: errorMsg,
   },
 });
+
+const cleanCardData = () => ({ type: 'CLEAN_CARD_DATA' });
 
 const changeFilter = (filter) => ({
   type: 'CHANGE_FILTER',
@@ -48,7 +48,7 @@ export {
   fetchCardRequest,
   fetchCardSuccess,
   fetchCardError,
-  fetchCardRestart,
+  cleanCardData,
   changeFilter,
   removeFilter,
 };

@@ -1,5 +1,5 @@
 const initialState = {
-  loading: false,
+  loading: true,
   data: {},
   errors: '',
 };
@@ -18,10 +18,9 @@ const singleCardReducer = (state = initialState, action) => {
       return {
         ...state,
         loading: false,
-        data: {},
-        errors: action.payload.msg,
+        data: action.payload.data,
       };
-    case 'FETCH_CARD_RESTART':
+    case 'CLEAN_CARD_DATA':
       return { ...initialState };
     default:
       return state;

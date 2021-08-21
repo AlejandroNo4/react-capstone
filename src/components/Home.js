@@ -9,6 +9,9 @@ const Home = () => {
   const dispatch = useDispatch();
   const gameDataState = useSelector((state) => state.cardsReducer);
   const filterBy = useSelector((state) => state.filterReducer);
+  const cardState = useSelector((state) => state.singleCardReducer);
+
+  console.log(cardState);
 
   useEffect(() => {
     fetchingData({ dispatch });
