@@ -1,12 +1,12 @@
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import App from './App';
-import GameItem from './GameItem';
+import CardItem from './CardItem';
 
 const Routes = () => (
   <BrowserRouter>
     <Switch>
       <Route exact path="/" component={App} />
-      <Route path="/item/:itemId" component={GameItem} />
+      <Route path="/item/:itemId" component={CardItem} />
     </Switch>
   </BrowserRouter>
 );

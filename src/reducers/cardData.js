@@ -4,7 +4,7 @@ const initialState = {
   errors: '',
 };
 
-const gameDataReducer = (state = initialState, action) => {
+const cardsReducer = (state = initialState, action) => {
   switch (action.type) {
     case 'FETCH_DATA_REQUEST':
       return { ...state, loading: true };
@@ -21,9 +21,11 @@ const gameDataReducer = (state = initialState, action) => {
         data: {},
         errors: action.payload.msg,
       };
+    case 'RESTART_DATA':
+      return { ...initialState };
     default:
       return state;
   }
 };
 
-export default gameDataReducer;
+export default cardsReducer;

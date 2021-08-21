@@ -1,9 +1,9 @@
 import { combineReducers } from 'redux';
-import gameDataReducer from './gameData';
+import cardsReducer from './cardData';
 import filterReducer from './filter';
 
 const rootReducer = combineReducers({
-  gameDataReducer,
+  cardsReducer,
   filterReducer,
 });
 

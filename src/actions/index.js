@@ -14,6 +14,8 @@ const fetchDataError = (errorMsg) => ({
   },
 });
 
+const restartData = () => ({ type: 'RESTART_DATA' });
+
 const changeFilter = (filter) => ({
   type: 'CHANGE_FILTER',
   payload: {
@@ -24,5 +26,5 @@ const changeFilter = (filter) => ({
 const removeFilter = () => ({ type: 'REMOVE_FILTER' });
 
 export {
-  fetchDataRequest, fetchDataSuccess, fetchDataError, changeFilter, removeFilter,
+  fetchDataRequest, fetchDataSuccess, fetchDataError, changeFilter, removeFilter, restartData,
 };
