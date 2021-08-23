@@ -18,7 +18,7 @@ const GameItem = ({ match }) => {
     return () => { dispatch(cleanCardData()); };
   }, []);
 
-  if (cardState.loading || Object.keys(cardState.data).length === 0) {
+  if (cardState.loading) {
     return <h2>loading</h2>;
   }
   if (cardState.error) {
@@ -41,6 +41,8 @@ const GameItem = ({ match }) => {
       <p>{card.rarity}</p>
       <p>Text:</p>
       <p>{card.text}</p>
+      <p>url:</p>
+      <p>{card.imageUrl}</p>
       <p>
         <Link to="/">go back!</Link>
       </p>
