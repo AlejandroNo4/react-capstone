@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
 import { cleanCardData } from '../actions/index';
 import { fetchingCard } from './fetching';
+import Loading from './Loading';
 
 const GameItem = ({ match }) => {
   const dispatch = useDispatch();
@@ -19,7 +20,7 @@ const GameItem = ({ match }) => {
   }, []);
 
   if (cardState.loading) {
-    return <h2>loading</h2>;
+    return <Loading />;
   }
   if (cardState.error) {
     return <h2>{cardState.error}</h2>;

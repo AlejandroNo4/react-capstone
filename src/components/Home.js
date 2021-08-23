@@ -4,6 +4,8 @@ import { changeFilter, removeFilter } from '../actions';
 import ItemPreview from './ItemPreview';
 import { fetchingData } from './fetching';
 import FilterType from './FilterType';
+import Loading from './Loading';
+import logo from '../assets/magic-logo.png';
 
 const Home = () => {
   const dispatch = useDispatch();
@@ -18,7 +20,7 @@ const Home = () => {
   }, []);
 
   if (gameDataState.loading) {
-    return <h2>loading</h2>;
+    return <Loading />;
   }
   if (gameDataState.error) {
     return <h2>{gameDataState.error}</h2>;
@@ -40,8 +42,13 @@ const Home = () => {
   const cardsToRender = filterBy.filter === 'All' ? allCards : filteredCards;
   return (
     <div>
-      <FilterType selectHandler={handleFilterChange} />
-      <ul>
+      <nav className="d-flex nav-bar">
+        <img alt="logo" className="nav-logo" src={logo} />
+        <h1>Card List</h1>
+        <FilterType selectHandler={handleFilterChange} />
+      </nav>
+
+      <ul className="">
         {cardsToRender.map((card) => (
           <ItemPreview
             key={card.id}
