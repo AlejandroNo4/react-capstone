@@ -6,13 +6,14 @@ const FilterType = ({ selectHandler }) => {
   const handleChange = (val) => selectHandler(val);
 
   return (
-    <form>
+    <form className="select">
       <select
         name="categoryName"
         onChange={(e) => handleChange(e.target.value)}
       >
         {categoryList}
       </select>
+      <div className="select_arrow" />
     </form>
   );
 };

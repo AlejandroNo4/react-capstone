@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 import { changeFilter, removeFilter } from '../actions';
 import ItemPreview from './ItemPreview';
 import { fetchingData } from './fetching';
@@ -11,9 +12,6 @@ const Home = () => {
   const dispatch = useDispatch();
   const gameDataState = useSelector((state) => state.cardsReducer);
   const filterBy = useSelector((state) => state.filterReducer);
-  const cardState = useSelector((state) => state.singleCardReducer);
-
-  console.log(cardState);
 
   useEffect(() => {
     fetchingData({ dispatch });
@@ -41,14 +39,15 @@ const Home = () => {
 
   const cardsToRender = filterBy.filter === 'All' ? allCards : filteredCards;
   return (
-    <div>
+    <div className="cards-container d-flex flex-column align-center">
       <nav className="d-flex nav-bar">
-        <img alt="logo" className="nav-logo" src={logo} />
-        <h1>Card List</h1>
+        <p>
+          <Link to="/"><img alt="logo" className="nav-logo" src={logo} /></Link>
+        </p>
         <FilterType selectHandler={handleFilterChange} />
       </nav>
 
-      <ul className="">
+      <ul className="d-flex cards-grid">
         {cardsToRender.map((card) => (
           <ItemPreview
             key={card.id}

@@ -1,22 +1,23 @@
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+import notFound from '../assets/not-found.png';
 
-const ItemPreview = ({ id, name, srcImg }) => {
-  console.log('yay');
-
-  return (
-    <li>
-      <img
-        src={srcImg === undefined ? 'http://windowsbulletin.com/wp-content/uploads/2019/07/Tumblr-Images-not-Loading.jpg' : srcImg}
-        alt={name}
-      />
-      <p>{name}</p>
-      <p>
-        <Link to={`/item/${id}`}>click to see more</Link>
-      </p>
-    </li>
-  );
-};
+const ItemPreview = ({ id, name, srcImg }) => (
+  <li>
+    <p className="preview-item">
+      <Link to={`/item/${id}`}>
+        {' '}
+        <div className={srcImg === undefined ? '' : 'line-card-top'} />
+        <p className="name-preview">{name}</p>
+        <img
+          src={srcImg === undefined ? notFound : srcImg}
+          alt={name}
+          className="card-image"
+        />
+      </Link>
+    </p>
+  </li>
+);
 
 ItemPreview.defaultProps = {
   srcImg: undefined,

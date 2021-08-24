@@ -5,6 +5,8 @@ import PropTypes from 'prop-types';
 import { cleanCardData } from '../actions/index';
 import { fetchingCard } from './fetching';
 import Loading from './Loading';
+import logo from '../assets/magic-logo.png';
+import notFound from '../assets/not-found.png';
 
 const GameItem = ({ match }) => {
   const dispatch = useDispatch();
@@ -30,23 +32,32 @@ const GameItem = ({ match }) => {
 
   return (
     <div>
-      <img alt={card.name} src={card.imageUrl} />
-      <h2>{card.name}</h2>
-      <p>Artist:</p>
-      <p>{card.artist}</p>
-      <p>Original Type:</p>
-      <p>{card.originalType}</p>
-      <p>Power:</p>
-      <p>{card.power}</p>
-      <p>Rarity:</p>
-      <p>{card.rarity}</p>
-      <p>Text:</p>
-      <p>{card.text}</p>
-      <p>url:</p>
-      <p>{card.imageUrl}</p>
-      <p>
-        <Link to="/">go back!</Link>
-      </p>
+      <nav className="d-flex nav-bar">
+        <p>
+          <Link to="/"><img alt="logo" className="nav-logo" src={logo} /></Link>
+        </p>
+      </nav>
+      <div className="d-flex flex-column align-center card-info cards-container">
+        <h2 className="title">{card.name}</h2>
+        <div className="img-container">
+          <div className={card.imageUrl === undefined ? '' : 'line-card-top'} />
+          <img alt={card.name} src={card.imageUrl === undefined ? notFound : card.imageUrl} />
+          <div className={card.imageUrl === undefined ? '' : 'line-card-bottom'} />
+        </div>
+        <div className="info-container">
+          <p className="property">Artist:</p>
+          <p className="content">{card.artist}</p>
+          <p className="property">Original Type:</p>
+          <p className="content">{card.originalType}</p>
+          <p className="property">Power:</p>
+          <p className="content">{card.power}</p>
+          <p className="property">Rarity:</p>
+          <p className="content">{card.rarity}</p>
+          <p className="property">Text:</p>
+          <p className="content">{card.text}</p>
+        </div>
+        <Link to="/" className="back-button">BACK TO ALL</Link>
+      </div>
     </div>
   );
 };

@@ -1,11 +1,27 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto+Mono:wght@300;400;700&display=swap");
+
 * {
   border: 0;
   margin: 0;
   padding: 0;
+  list-style: none;
+  text-decoration: none;
 }
 
 .d-flex {
   display: flex;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.justify-center {
+  justify-content: center;
 }
 
 .object-img {
@@ -17,10 +33,23 @@
   height: 100vh;
 }
 
-.bg-image {
+.cards-container {
+  min-height: 100vh;
+  background-image: url("./assets/kasia-zielinska-swamp.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.loading-container {
+  min-height: 100%;
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  background-image: url("./assets/sean-evans-un.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  justify-content: center;
+  align-items: center;
 }
 
 .overlay {
@@ -34,19 +63,192 @@
 }
 
 .loading-image {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  margin-top: -150px;
-  margin-left: -250px;
+  z-index: 2;
+  max-width: 500px;
+  max-height: 300px;
 }
 
 .nav-bar {
   align-items: center;
-  padding: 5px 20px;
+  width: 100%;
+  padding: 5px 30px;
+  box-sizing: border-box;
   background-color: rgb(123, 80, 0);
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
-.nav-logo{
+.nav-logo {
   max-width: 150px;
+}
+
+.select {
+  position: relative;
+  display: inline-block;
+  width: 30%;
+}
+.select select {
+  font-family: "Arial";
+  display: inline-block;
+  width: 100%;
+  cursor: pointer;
+  padding: 10px 15px;
+  outline: 0;
+  border: 1px solid #000000;
+  border-radius: 4px;
+  background: #ffffff;
+  color: #7b7b7b;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+.select select::-ms-expand {
+  display: none;
+}
+.select select:hover,
+.select select:focus {
+  color: #1f6092;
+  background: #cccccc;
+}
+.select select:disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+.select_arrow {
+  position: absolute;
+  top: 16px;
+  right: 15px;
+  pointer-events: none;
+  border-style: solid;
+  border-width: 8px 5px 0px 5px;
+  border-color: #1f6092 transparent transparent transparent;
+}
+.select select:hover ~ .select_arrow,
+.select select:focus ~ .select_arrow {
+  border-top-color: #000000;
+}
+.select select:disabled ~ .select_arrow {
+  border-top-color: #cccccc;
+}
+
+.cards-grid {
+  max-width: 1500px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.preview-item {
+  margin: 15px;
+  max-width: 223px;
+  max-height: 350px;
+  position: relative;
+  box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+    0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06),
+    0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+    0 100px 80px rgba(0, 0, 0, 0.12);
+}
+
+.line-card-top {
+  border: 5px solid black;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.line-card-bottom {
+  border: 5px solid black;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.name-preview {
+  position: absolute;
+  width: 100%;
+  color: white;
+  background-color: black;
+  opacity: 0.8;
+  text-align: center;
+  padding: 10px 0;
+  bottom: 0;
+  font-family: "Montserrat", sans-serif;
+}
+
+.card-info {
+  padding: 15px;
+}
+
+.title {
+  font-size: 1.8em;
+  font-family: "Montserrat", sans-serif;
+  margin-bottom: 20px;
+  color: white;
+  background-color: rgba(73, 73, 43, 0.49);
+  padding: 5px;
+  text-align: center;
+}
+
+.img-container {
+  position: relative;
+}
+
+.info-container {
+  margin-top: 30px;
+  background-color: rgba(73, 73, 43, 0.49);
+  color: white;
+  padding: 15px;
+  max-width: 700px;
+}
+
+.property {
+  font-size: 1.2em;
+  font-family: "Montserrat", sans-serif;
+  margin: 5px 0;
+  letter-spacing: 2px;
+  font-weight: bold;
+}
+
+.content {
+  font-family: 'Roboto Mono', monospace;
+  color: rgb(255, 242, 215);
+}
+
+.back-button {
+  color: white;
+  width: 150px;
+  border: 2px solid white;
+  padding: 10px;
+  text-align: center;
+  margin-top: 30px;
+  font-family: 'Roboto Mono', monospace;
+  font-weight: bold;
+}
+
+@media (max-width: 80em) {
+  .nav-bar {
+    flex-direction: column;
+    padding: 15px 30px;
+  }
+
+  .nav-logo {
+    margin: 0;
+  }
+
+  .select {
+    width: 100%;
+    margin: 0;
+  }
+
+  .main-title {
+    font-size: 0.8em;
+  }
+
+  .loading-image {
+    max-width: 250px;
+    max-height: 150px;
+  }
 }
