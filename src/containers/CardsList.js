@@ -2,13 +2,13 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { changeFilter, removeFilter } from '../actions';
-import ItemPreview from './ItemPreview';
-import { fetchingData } from './fetching';
-import FilterType from './FilterType';
+import ItemPreview from '../components/ItemPreview';
+import { fetchingData } from '../api/fetching';
+import FilterType from '../components/FilterType';
 import Loading from './Loading';
 import logo from '../assets/magic-logo.png';
 
-const Home = () => {
+const CardsList = () => {
   const dispatch = useDispatch();
   const gameDataState = useSelector((state) => state.cardsReducer);
   const filterBy = useSelector((state) => state.filterReducer);
@@ -62,4 +62,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default CardsList;

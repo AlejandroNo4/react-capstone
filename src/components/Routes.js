@@ -1,6 +1,6 @@
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import App from './App';
-import CardItem from './CardItem';
+import CardItem from '../containers/CardItem';
 
 const Routes = () => (
   <BrowserRouter>

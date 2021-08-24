@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
 import { cleanCardData } from '../actions/index';
-import { fetchingCard } from './fetching';
+import { fetchingCard } from '../api/fetching';
 import Loading from './Loading';
 import logo from '../assets/magic-logo.png';
 import notFound from '../assets/not-found.png';
@@ -56,7 +56,7 @@ const GameItem = ({ match }) => {
           <p className="property">Text:</p>
           <p className="content">{card.text}</p>
         </div>
-        <Link to="/" className="back-button">BACK TO ALL</Link>
+        <Link to="/" className="back-button">BACK TO LIST</Link>
       </div>
     </div>
   );
