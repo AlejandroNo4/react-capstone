@@ -1,5 +1,5 @@
-import Home from './Home';
+import CardsList from '../containers/CardsList';
 
-const App = () => <div><Home /></div>;
+const App = () => <div className="body"><CardsList /></div>;
 
 export default App;
