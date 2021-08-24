@@ -40,14 +40,14 @@ const CardsList = () => {
   const cardsToRender = filterBy.filter === 'All' ? allCards : filteredCards;
   return (
     <div className="cards-container d-flex flex-column align-center">
-      <nav className="d-flex nav-bar">
+      <nav className="d-flex nav-bar align-center">
         <p>
           <Link to="/"><img alt="logo" className="nav-logo" src={logo} /></Link>
         </p>
         <FilterType selectHandler={handleFilterChange} />
       </nav>
 
-      <ul className="d-flex cards-grid">
+      <ul className="d-flex cards-grid justify-center">
         {cardsToRender.map((card) => (
           <ItemPreview
             key={card.id}
