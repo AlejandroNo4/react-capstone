@@ -10,7 +10,7 @@ import logo from '../assets/magic-logo.png';
 
 const CardsList = () => {
   const dispatch = useDispatch();
-  const gameDataState = useSelector((state) => state.cardsReducer);
+  const gameDataState = useSelector((state) => state.cardsDataReducer);
   const filterBy = useSelector((state) => state.filterReducer);
 
   useEffect(() => {

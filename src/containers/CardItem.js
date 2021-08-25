@@ -8,9 +8,9 @@ import Loading from './Loading';
 import logo from '../assets/magic-logo.png';
 import notFound from '../assets/not-found.png';
 
-const GameItem = ({ match }) => {
+const CardItem = ({ match }) => {
   const dispatch = useDispatch();
-  const cardState = useSelector((state) => state.singleCardReducer);
+  const cardState = useSelector((state) => state.cardReducer);
   const {
     params: { itemId },
   } = match;
@@ -62,8 +62,8 @@ const GameItem = ({ match }) => {
   );
 };
 
-GameItem.propTypes = {
+CardItem.propTypes = {
   match: PropTypes.objectOf(PropTypes.any).isRequired,
 };
 
-export default GameItem;
+export default CardItem;
