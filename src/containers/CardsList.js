@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { changeFilter, removeFilter } from '../actions';
 import ItemPreview from '../components/ItemPreview';
-import { fetchingData } from '../api/fetching';
+import fetchingData from '../api/fetchingData';
 import FilterType from '../components/FilterType';
 import Loading from './Loading';
 import logo from '../assets/magic-logo.png';
@@ -24,6 +24,8 @@ const CardsList = () => {
     return <h2>{gameDataState.error}</h2>;
   }
 
+  console.log(gameDataState);
+
   const allCards = gameDataState.data;
   const filteredCards = gameDataState.data.filter(
     (card) => card.type.split(' ')[0] === filterBy.filter,
@@ -41,13 +43,13 @@ const CardsList = () => {
   return (
     <div className="cards-container d-flex flex-column align-center">
       <nav className="d-flex nav-bar align-center">
-        <p>
+        <div>
           <Link to="/"><img alt="logo" className="nav-logo" src={logo} /></Link>
-        </p>
+        </div>
         <FilterType selectHandler={handleFilterChange} />
       </nav>
 
-      <ul className="d-flex cards-grid justify-center">
+      <ul className="d-flex cards-grid justify-center" data-testid="cards-test">
         {cardsToRender.map((card) => (
           <ItemPreview
             key={card.id}

@@ -4,7 +4,7 @@ import notFound from '../assets/not-found.png';
 
 const ItemPreview = ({ id, name, srcImg }) => (
   <li>
-    <p className="preview-item">
+    <div className="preview-item">
       <Link to={`/item/${id}`}>
         {' '}
         <div className={srcImg === undefined ? '' : 'line-card-top'} />
@@ -15,7 +15,7 @@ const ItemPreview = ({ id, name, srcImg }) => (
           className="card-image"
         />
       </Link>
-    </p>
+    </div>
   </li>
 );
 

@@ -1,23 +1,17 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import '@testing-library/jest-dom/extend-expect';
+import { render } from '@testing-library/react';
 import Loading from '../containers/Loading';
 
-let component;
-
-beforeEach(() => {
-  component = shallow(<Loading />);
-});
-
 describe('Loading component', () => {
-  it('Render the component without errors', () => {
-    const wrapper = component.find('.loading-container');
-    expect(wrapper.length).toBe(1);
+  it('Render component wothout errors', () => {
+    const component = render(<Loading />);
+    expect(component).toMatchSnapshot();
   });
 
-  it('Render the image and overlay', () => {
-    const image = component.find('img');
-    const overlay = component.find('.overlay');
-    expect(image.length).toBe(1);
-    expect(overlay.length).toBe(1);
+  it('Precense of a image', () => {
+    const component = render(<Loading />);
+    const image = component.getByRole('img');
+    expect(image).toBeTruthy();
   });
 });

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
 import { cleanCardData } from '../actions/index';
-import { fetchingCard } from '../api/fetching';
+import fetchingCard from '../api/fetchingCard';
 import Loading from './Loading';
 import logo from '../assets/magic-logo.png';
 import notFound from '../assets/not-found.png';
