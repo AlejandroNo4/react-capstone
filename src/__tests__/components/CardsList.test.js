@@ -75,10 +75,10 @@ describe('Cards List component', () => {
     expect(cardPreview).toBeVisible();
   });
 
-  it("Renders the correct route for home button", async () => {
-    const buttonBack = await screen.findByTestId("home-btn");
-    expect(buttonBack).toHaveProperty("href", "http://localhost/");
-    expect(buttonBack).not.toHaveProperty("href", "http://localhost/12345");
+  it('Renders the correct route for home button', async () => {
+    const buttonBack = await screen.findByTestId('home-btn');
+    expect(buttonBack).toHaveProperty('href', 'http://localhost/');
+    expect(buttonBack).not.toHaveProperty('href', 'http://localhost/12345');
   });
 
   it('Pass the correct props to the Item Preview component', async () => {
