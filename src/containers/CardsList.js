@@ -1,12 +1,11 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Link } from 'react-router-dom';
 import { changeFilter, removeFilter } from '../actions';
 import ItemPreview from '../components/ItemPreview';
 import fetchingData from '../api/fetchingData';
 import FilterType from '../components/FilterType';
 import Loading from './Loading';
-import logo from '../assets/magic-logo.png';
+import BtnHome from '../components/BtnHome';
 
 const CardsList = () => {
   const dispatch = useDispatch();
@@ -42,7 +41,7 @@ const CardsList = () => {
     <div className="cards-container d-flex flex-column align-center">
       <nav className="d-flex nav-bar align-center">
         <div>
-          <Link to="/"><img alt="logo" className="nav-logo" src={logo} /></Link>
+          <BtnHome />
         </div>
         <FilterType selectHandler={handleFilterChange} />
       </nav>
