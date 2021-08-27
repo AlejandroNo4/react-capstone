@@ -24,8 +24,6 @@ const CardsList = () => {
     return <h2>{gameDataState.error}</h2>;
   }
 
-  console.log(gameDataState);
-
   const allCards = gameDataState.data;
   const filteredCards = gameDataState.data.filter(
     (card) => card.type.split(' ')[0] === filterBy.filter,
@@ -58,7 +56,6 @@ const CardsList = () => {
             srcImg={card.imageUrl}
           />
         ))}
-        ;
       </ul>
     </div>
   );

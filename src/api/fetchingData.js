@@ -11,8 +11,6 @@ const fetchingData = ({ dispatch }) => {
     try {
       const request = await axios.get('https://api.magicthegathering.io/v1/cards');
       const { data } = request;
-      console.log(data);
-      console.log(request);
       dispatch(fetchDataSuccess(data.cards));
       return data;
     } catch (error) {
