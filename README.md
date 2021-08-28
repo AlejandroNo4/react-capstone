@@ -2,12 +2,14 @@
 
 # Magic Cards Catalogue
 
-> A cataloge of Magic cards.
+> A catalog of Magic cards.
 
 
 This project is part of the Microverse curriculum "React & Redux." 
 
-This is the final project for this module. It is a catalogue of the Magic card game cards. This project was built with React and Redux. A list of cards is displayed on it. Cards can be filtered by their type. Each can be accessed for more information.
+This project is the final for this module. It is a catalog of the "Magic card game" cards. 
+
+The project was built with React and Redux. A list of cards is displayed on it. Cards can be filtered by their type. Each can be accessed for more information.
 
 <br/>
 <p align="center">
