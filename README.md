@@ -83,6 +83,12 @@ Feel free to check the [Issues page](https://github.com/AlejandroNo4/react-capst
 
 Give a ⭐️ if you like this project!
 
+## Acknowledgments 🙌🏽
+
+Design inspired by [Marc-Antoine Roy](https://www.behance.net/gallery/11351281/NomNom)
+Background loading art by [Sean Evans](https://www.artstation.com/seanevans)
+Main Background by [Kasia 'Kafis' Zielińska](https://www.artstation.com/kafis)
+
 ## 📝 License
 
 This project is [MIT](./MIT.md) licensed.
