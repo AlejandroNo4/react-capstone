@@ -14,7 +14,7 @@ This is the final project for this module. It is a catalogue of the Magic card g
 <img src="app_screenshot.png" width="1000"/>
 <br/>
 <br/>
-<img src="app_screenshot_mobile.png"/>
+<img src="app_screenshot_mobile.png" width="300"/>
 </p>
 
 
