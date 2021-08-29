@@ -43,7 +43,7 @@ const CardsList = () => {
         <div>
           <BtnHome />
         </div>
-        <FilterType selectHandler={handleFilterChange} />
+        <FilterType selectHandler={handleFilterChange} val={filterBy.filter} />
       </nav>
 
       <ul className="d-flex cards-grid justify-center" data-testid="cards-test">

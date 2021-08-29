@@ -39,7 +39,7 @@
 
 .cards-container {
   min-height: 100vh;
-  background-image: url("./assets/kasia-zielinska-swamp.jpg");
+  background-image: url("../kasia-zielinska-swamp.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
@@ -48,7 +48,7 @@
 .loading-container {
   min-height: 100%;
   width: 100%;
-  background-image: url("./assets/sean-evans-un.jpg");
+  background-image: url("../sean-evans-un.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
