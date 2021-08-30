@@ -1,7 +1,7 @@
 import React from 'react';
 import '@testing-library/jest-dom/extend-expect';
 import { render } from '@testing-library/react';
-import Loading from '../../containers/Loading';
+import Loading from '../../components/Loading';
 
 describe('Loading component', () => {
   it('Render component wothout errors', () => {
