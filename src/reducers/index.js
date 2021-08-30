@@ -1,11 +1,11 @@
 import { combineReducers } from 'redux';
-import cardsReducer from './cardsData';
+import cardsDataReducer from './cardsData';
 import filterReducer from './filter';
-import singleCardReducer from './card';
+import cardReducer from './card';
 
 const rootReducer = combineReducers({
-  singleCardReducer,
-  cardsReducer,
+  cardReducer,
+  cardsDataReducer,
   filterReducer,
 });
 

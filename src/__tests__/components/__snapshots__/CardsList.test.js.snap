@@ -1,0 +1,144 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Cards List component Matches the snapshot 1`] = `
+<ul
+  class="d-flex cards-grid justify-center"
+  data-testid="cards-test"
+>
+  <li>
+    <div
+      class="preview-item"
+      data-testid="card-preview-1"
+    >
+      <a
+        href="/item/1"
+      >
+         
+        <div
+          class="line-card-top"
+        />
+        <p
+          class="name-preview"
+        >
+          Test name for a card
+        </p>
+        <img
+          alt="Test name for a card"
+          class="card-image"
+          data-testid="image-preview-1"
+          id="1"
+          src="/Test-img-URL"
+        />
+      </a>
+    </div>
+  </li>
+  <li>
+    <div
+      class="preview-item"
+      data-testid="card-preview-12"
+    >
+      <a
+        href="/item/12"
+      >
+         
+        <div
+          class="line-card-top"
+        />
+        <p
+          class="name-preview"
+        >
+          Test name for a Instant card
+        </p>
+        <img
+          alt="Test name for a Instant card"
+          class="card-image"
+          data-testid="image-preview-12"
+          id="12"
+          src="/Test-img-URL"
+        />
+      </a>
+    </div>
+  </li>
+  <li>
+    <div
+      class="preview-item"
+      data-testid="card-preview-123"
+    >
+      <a
+        href="/item/123"
+      >
+         
+        <div
+          class="line-card-top"
+        />
+        <p
+          class="name-preview"
+        >
+          Test name for a Legendary card
+        </p>
+        <img
+          alt="Test name for a Legendary card"
+          class="card-image"
+          data-testid="image-preview-123"
+          id="123"
+          src="/Test-img-URL"
+        />
+      </a>
+    </div>
+  </li>
+  <li>
+    <div
+      class="preview-item"
+      data-testid="card-preview-1234"
+    >
+      <a
+        href="/item/1234"
+      >
+         
+        <div
+          class="line-card-top"
+        />
+        <p
+          class="name-preview"
+        >
+          Test name for a Enchantment card
+        </p>
+        <img
+          alt="Test name for a Enchantment card"
+          class="card-image"
+          data-testid="image-preview-1234"
+          id="1234"
+          src="/Test-img-URL"
+        />
+      </a>
+    </div>
+  </li>
+  <li>
+    <div
+      class="preview-item"
+      data-testid="card-preview-12345"
+    >
+      <a
+        href="/item/12345"
+      >
+         
+        <div
+          class="line-card-top"
+        />
+        <p
+          class="name-preview"
+        >
+          Test name for a Sorvery card
+        </p>
+        <img
+          alt="Test name for a Sorvery card"
+          class="card-image"
+          data-testid="image-preview-12345"
+          id="12345"
+          src="/Test-img-URL"
+        />
+      </a>
+    </div>
+  </li>
+</ul>
+`;

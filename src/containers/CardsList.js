@@ -1,16 +1,15 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Link } from 'react-router-dom';
 import { changeFilter, removeFilter } from '../actions';
 import ItemPreview from '../components/ItemPreview';
-import { fetchingData } from '../api/fetching';
+import fetchingData from '../api/fetchingData';
 import FilterType from '../components/FilterType';
-import Loading from './Loading';
-import logo from '../assets/magic-logo.png';
+import Loading from '../components/Loading';
+import BtnHome from '../components/BtnHome';
 
 const CardsList = () => {
   const dispatch = useDispatch();
-  const gameDataState = useSelector((state) => state.cardsReducer);
+  const gameDataState = useSelector((state) => state.cardsDataReducer);
   const filterBy = useSelector((state) => state.filterReducer);
 
   useEffect(() => {
@@ -41,13 +40,13 @@ const CardsList = () => {
   return (
     <div className="cards-container d-flex flex-column align-center">
       <nav className="d-flex nav-bar align-center">
-        <p>
-          <Link to="/"><img alt="logo" className="nav-logo" src={logo} /></Link>
-        </p>
-        <FilterType selectHandler={handleFilterChange} />
+        <div>
+          <BtnHome />
+        </div>
+        <FilterType selectHandler={handleFilterChange} val={filterBy.filter} />
       </nav>
 
-      <ul className="d-flex cards-grid justify-center">
+      <ul className="d-flex cards-grid justify-center" data-testid="cards-test">
         {cardsToRender.map((card) => (
           <ItemPreview
             key={card.id}
@@ -56,7 +55,6 @@ const CardsList = () => {
             srcImg={card.imageUrl}
           />
         ))}
-        ;
       </ul>
     </div>
   );

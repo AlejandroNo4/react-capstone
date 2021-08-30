@@ -1,75 +1,93 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# Project Name
+# Magic Cards Catalogue
 
-> One paragraph statement about the project.
+> A catalog of Magic cards.
 
-![screenshot](./app_screenshot.png)
 
-Additional description about the project and its features.
+This project is part of the Microverse curriculum "React & Redux." 
 
-## Built With
+This project is the final for this module. It is a catalog of the "Magic card game" cards. 
 
-- Major languages
-- Frameworks
-- Technologies used
+The project was built with React and Redux. A list of cards is displayed on it. Cards can be filtered by their type. Each can be accessed for more information.
 
-## Live Demo
+<br/>
+<p align="center">
+<img src="app_screenshot.png" width="1000"/>
+<br/>
+<br/>
+<img src="app_screenshot_mobile.png" width="300"/>
+</p>
 
-[Live Demo Link](https://livedemo.com)
 
+## Live Version
+
+[Live version here!](https://magic-compendium.herokuapp.com)
+
+
+## Prerequisites
+
+- [Node.js](https://nodejs.org/en/) installed.
+- Vs Code
 
 ## Getting Started
 
-**This is an example of how you may give instructions on setting up your project locally.**
-**Modify this file to match your project, remove sections that don't apply. For example: delete the testing section if the currect project doesn't require testing.**
+To get a local copy up and running, follow these simple example steps.
 
+- At first, you have to clone this repository. Open your terminal and paste this without the $ sign.
 
-To get a local copy up and running follow these simple example steps.
+      $ git clone https://github.com/AlejandroNo4/react-capstone.git
 
-### Prerequisites
+- Now that you have the repository in your local machine. Change the direction of the local file with your terminal. Just type "$ cd" (without the $ sign) and the path to reach the react-capstone folder.<br/>
+  Something like:
 
-### Setup
+      $ cd User/Documents/react-capstone
 
-### Install
+- Now run 
 
-### Usage
+      $npm install
 
-### Run tests
+- You are done with the installations! Now to run the project, first type:
 
-### Deployment
+      $ npm start
 
+- This will automatically open the app on your browser.
 
+<br/>
 
-## Authors
+## Built With
+
+- Javascript
+- VS Code
+- Git
+- HTML
+- React
+- Redux
+- JSX
+
+## Author
 
 👤 **Author1**
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
-
-👤 **Author2**
-
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+- GitHub: [@AlejandroNo4](https://github.com/AlejandroNo4)
+- Twitter: [@Alejand80002666](https://twitter.com/Alejand80002666)
+- LinkedIn: [Alejandro Contreras Rodriguez](https://www.linkedin.com/in/alejandro-contreras-rodriguez-b524821b5)
 
 ## 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](../../issues/).
+Feel free to check the [Issues page](https://github.com/AlejandroNo4/react-capstone/issues).
 
 ## Show your support
 
 Give a ⭐️ if you like this project!
 
-## Acknowledgments
+## Acknowledgments 🙌🏽
 
-- Hat tip to anyone whose code was used
-- Inspiration
-- etc
+- Design inspired by [Marc-Antoine Roy](https://www.behance.net/gallery/11351281/NomNom)
+- Background loading art by [Sean Evans](https://www.artstation.com/seanevans)
+- Main Background by [Kasia 'Kafis' Zielińska](https://www.artstation.com/kafis)
 
 ## 📝 License
 

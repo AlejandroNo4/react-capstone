@@ -4,7 +4,7 @@ const initialState = {
   errors: '',
 };
 
-const singleCardReducer = (state = initialState, action) => {
+const cardReducer = (state = initialState, action) => {
   switch (action.type) {
     case 'FETCH_CARD_REQUEST':
       return { ...state, loading: true };
@@ -18,7 +18,8 @@ const singleCardReducer = (state = initialState, action) => {
       return {
         ...state,
         loading: false,
-        data: action.payload.data,
+        data: {},
+        errors: action.payload.error,
       };
     case 'CLEAN_CARD_DATA':
       return { ...initialState };
@@ -27,4 +28,4 @@ const singleCardReducer = (state = initialState, action) => {
   }
 };
 
-export default singleCardReducer;
+export default cardReducer;

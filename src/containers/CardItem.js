@@ -1,16 +1,16 @@
 import React, { useEffect } from 'react';
-import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
+import BntBack from '../components/BtnBack';
 import { cleanCardData } from '../actions/index';
-import { fetchingCard } from '../api/fetching';
-import Loading from './Loading';
-import logo from '../assets/magic-logo.png';
+import fetchingCard from '../api/fetchingCard';
+import Loading from '../components/Loading';
+import BtnHome from '../components/BtnHome';
 import notFound from '../assets/not-found.png';
 
-const GameItem = ({ match }) => {
+const CardItem = ({ match }) => {
   const dispatch = useDispatch();
-  const cardState = useSelector((state) => state.singleCardReducer);
+  const cardState = useSelector((state) => state.cardReducer);
   const {
     params: { itemId },
   } = match;
@@ -31,20 +31,20 @@ const GameItem = ({ match }) => {
   const card = cardState.data;
 
   return (
-    <div>
+    <div data-testid="card-wrapper">
       <nav className="d-flex nav-bar">
         <p>
-          <Link to="/"><img alt="logo" className="nav-logo" src={logo} /></Link>
+          <BtnHome />
         </p>
       </nav>
       <div className="d-flex flex-column align-center card-info cards-container">
-        <h2 className="title">{card.name}</h2>
+        <h2 className="title" data-testid="title">{card.name}</h2>
         <div className="img-container">
           <div className={card.imageUrl === undefined ? '' : 'line-card-top'} />
           <img alt={card.name} src={card.imageUrl === undefined ? notFound : card.imageUrl} />
           <div className={card.imageUrl === undefined ? '' : 'line-card-bottom'} />
         </div>
-        <div className="info-container">
+        <div className="info-container" data-testid="info-container">
           <p className="property">Artist:</p>
           <p className="content">{card.artist}</p>
           <p className="property">Original Type:</p>
@@ -56,14 +56,14 @@ const GameItem = ({ match }) => {
           <p className="property">Text:</p>
           <p className="content">{card.text}</p>
         </div>
-        <Link to="/" className="back-button">BACK TO LIST</Link>
+        <BntBack path="/" />
       </div>
     </div>
   );
 };
 
-GameItem.propTypes = {
+CardItem.propTypes = {
   match: PropTypes.objectOf(PropTypes.any).isRequired,
 };
 
-export default GameItem;
+export default CardItem;

@@ -4,7 +4,7 @@ const initialState = {
   errors: '',
 };
 
-const cardsReducer = (state = initialState, action) => {
+const cardsDataReducer = (state = initialState, action) => {
   switch (action.type) {
     case 'FETCH_DATA_REQUEST':
       return { ...state, loading: true };
@@ -19,11 +19,11 @@ const cardsReducer = (state = initialState, action) => {
         ...state,
         loading: false,
         data: {},
-        errors: action.payload.msg,
+        errors: action.payload.error,
       };
     default:
       return state;
   }
 };
 
-export default cardsReducer;
+export default cardsDataReducer;
