@@ -1,0 +1,110 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Card Item component tests Matches the snapshot 1`] = `
+<div
+  data-testid="card-wrapper"
+>
+  <nav
+    class="d-flex nav-bar"
+  >
+    <p>
+      <a
+        data-testid="home-btn"
+        href="/"
+      >
+        <img
+          alt="logo"
+          class="nav-logo"
+          src="magic-logo.png"
+        />
+      </a>
+    </p>
+  </nav>
+  <div
+    class="d-flex flex-column align-center card-info cards-container"
+  >
+    <h2
+      class="title"
+      data-testid="title"
+    >
+      Angel of Mercy
+    </h2>
+    <div
+      class="img-container"
+    >
+      <div
+        class="line-card-top"
+      />
+      <img
+        alt="Angel of Mercy"
+        src="http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=129465&type=card"
+      />
+      <div
+        class="line-card-bottom"
+      />
+    </div>
+    <div
+      class="info-container"
+      data-testid="info-container"
+    >
+      <p
+        class="property"
+      >
+        Artist:
+      </p>
+      <p
+        class="content"
+      >
+        Volkan Baǵa
+      </p>
+      <p
+        class="property"
+      >
+        Original Type:
+      </p>
+      <p
+        class="content"
+      >
+        Creature - Angel
+      </p>
+      <p
+        class="property"
+      >
+        Power:
+      </p>
+      <p
+        class="content"
+      >
+        3
+      </p>
+      <p
+        class="property"
+      >
+        Rarity:
+      </p>
+      <p
+        class="content"
+      >
+        Uncommon
+      </p>
+      <p
+        class="property"
+      >
+        Text:
+      </p>
+      <p
+        class="content"
+      >
+        Angel of Mercy enters the battlefield, you gain 3 life.
+      </p>
+    </div>
+    <a
+      class="back-button"
+      data-testid="back-btn"
+      href="/"
+    >
+      Back to List!
+    </a>
+  </div>
+</div>
+`;
