@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import BntBack from '../components/BtnBack';
 import { cleanCardData } from '../actions/index';
 import fetchingCard from '../api/fetchingCard';
-import Loading from './Loading';
+import Loading from '../components/Loading';
 import BtnHome from '../components/BtnHome';
 import notFound from '../assets/not-found.png';
 

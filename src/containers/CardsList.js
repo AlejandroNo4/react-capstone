@@ -4,7 +4,7 @@ import { changeFilter, removeFilter } from '../actions';
 import ItemPreview from '../components/ItemPreview';
 import fetchingData from '../api/fetchingData';
 import FilterType from '../components/FilterType';
-import Loading from './Loading';
+import Loading from '../components/Loading';
 import BtnHome from '../components/BtnHome';
 
 const CardsList = () => {
